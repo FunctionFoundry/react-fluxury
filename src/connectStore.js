@@ -1,12 +1,12 @@
 import React from 'react';
 
-export function connectStore (store, ComposedComponent, getState) {
+export function connectStore (store, ComposedComponent, transform) {
   return (
     class ConnectToStore extends React.Component {
 
       constructor(props) {
         super(props)
-        this.state = store.getState()
+        this.state = transform( store.getState() )
         this.handleStoreChange = this.handleStoreChange.bind(this)
       }
 
@@ -25,7 +25,7 @@ export function connectStore (store, ComposedComponent, getState) {
       handleStoreChange() {
         if (store && typeof store.getState === 'function') {
           this.setState(
-            store.getState()
+            transform( store.getState() )
           )
         }
       }
