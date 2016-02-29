@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "make",
-    "test": "faucet `find test -name '*.js'`"
+    "test": "node test"
   },
   "repository": {
     "type": "git",
