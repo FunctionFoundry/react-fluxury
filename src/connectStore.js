@@ -2,7 +2,13 @@ import React from 'react';
 
 export function connectStore (store, ComposedComponent, getState) {
   return (
-    class extends React.Component {
+    class ConnectToStore extends React.Component {
+
+      constructor(props) {
+        super(props)
+        this.state = store.getState()
+        this.handleStoreChange = this.handleStoreChange.bind(this)
+      }
 
       componentDidMount() {
         this.eventSubscription = store.addListener( this.handleStoreChange )
