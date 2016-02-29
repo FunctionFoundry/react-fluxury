@@ -1,8 +1,11 @@
 var test = require('tape');
+var rf = require('./lib/index')
 
-test('boilerplate', function(t) {
-  t.plan(1);
+test('api tests', function(t) {
+  t.plan(3);
 
-  t.equals(typeof 'Write Tests', 'string' );
+  t.equals(typeof rf, 'object' );
+  t.equals(typeof rf.connectStore, 'function' );
+  t.equals(typeof rf.connectStoreMixin, 'function' );
 
 });

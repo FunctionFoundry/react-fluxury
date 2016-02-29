@@ -1,2 +1,7 @@
-export {connectStore} from './connectToStore'
-export {connectStoreMixin} from './connectStoreMixin'
+import {connectStore} from './connectStore'
+import {connectStoreMixin} from './connectStoreMixin'
+
+export default {
+  connectStore,
+  connectStoreMixin
+}

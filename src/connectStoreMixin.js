@@ -2,7 +2,8 @@
  * Author: Peter Moresi
  * Date: 2/29/2016
  */
-export function connectToStoreMixin(store, getState) {
+ 
+export function connectStoreMixin(store, getState) {
   return {
     componentDidMount() {
       this.__eventSubscription = store.addListener( this.__handleStoreChange )
