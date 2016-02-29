@@ -21,7 +21,7 @@ This is how to connect fluxury stores without react-fluxury binding.
 
 ```js
 var React = require('react');
-var {createStore} = require('fluxury');
+var {createStore, dispatch} = require('fluxury');
 
 var countStore = createStore('CountStore', 0, {
   increment: (state) => state + 1,
@@ -44,12 +44,12 @@ var MyComponent = React.createClass({
 
   handleUpClick: function() {
     /* Call dispatch to submit the action to the stores */
-    countStore.INC())
+    dispatch('increment')
   },
 
   handleDownClick: function() {
     /* Call dispatch to submit the action to the stores */
-    countStore.DEC()
+    dispatch('decrement')
   },
 
   render: function() {
@@ -67,11 +67,11 @@ var MyComponent = React.createClass({
 
 ## mixins
 
-Love or hate mixins, this is how to connect fluxury stores for mixin fanboys.
+Love or hate mixins, this is how to connect fluxury stores for mixin fanboys like myself.
 
 ```js
 var React = require('react');
-var {createStore} = require('fluxury');
+var {createStore, dispatch} = require('fluxury');
 var {connectStoreMixin} = require('react-fluxury').connectStoreMixin;
 
 var countStore = createStore('CountStore', 0, {
@@ -81,18 +81,16 @@ var countStore = createStore('CountStore', 0, {
 
 var MyComponent = React.createClass({
 
-  mixins: [connectStoreMixin(state => ({
+  mixins: [connectStoreMixin(countStore, state => ({
     count: state
   })]
 
-  handleUpClick: function() {
-    /* Call dispatch to submit the action to the stores */
-    countStore.INC())
+  handleUpClick() {
+    dispatch('increment')
   },
 
-  handleDownClick: function() {
-    /* Call dispatch to submit the action to the stores */
-    countStore.DEC()
+  handleDownClick() {
+    dispatch('decrement')
   },
 
   render: function() {
@@ -114,9 +112,11 @@ MyComponent = connectStore(MyComponent, (state) => {
 
 ## higher-order component
 
+Higher order functions are so cool and are compatible with ES6 classes.
+
 ```js
-var React = require('react');
-var {createStore} = require('fluxury');
+var Component = require('react').Component;
+var {createStore, dispatch} = require('fluxury');
 var {connectStore} = require('react-fluxury');
 
 var countStore = createStore('CountStore', 0, {
@@ -124,19 +124,17 @@ var countStore = createStore('CountStore', 0, {
   decrement: (state) => state - 1
 });
 
-var MyComponent = React.createClass({
+class MyComponent extends Component {
 
-  handleUpClick: function() {
-    /* Call dispatch to submit the action to the stores */
-    countStore.INC())
-  },
+  handleUpClick() {
+    dispatch('increment')
+  }
 
-  handleDownClick: function() {
-    /* Call dispatch to submit the action to the stores */
-    countStore.DEC()
-  },
+  handleDownClick() {
+    dispatch('decrement')
+  }
 
-  render: function() {
+  render() {
     return (
       <div>
         <p>{this.state.count}</p>
@@ -148,7 +146,7 @@ var MyComponent = React.createClass({
 
 });
 
-MyComponent = connectStore(MyComponent, (state) => {
+MyComponent = connectStore(countStore, MyComponent, (state) => {
   count: state
 })
 ```
