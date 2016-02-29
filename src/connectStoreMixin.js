@@ -2,9 +2,17 @@
  * Author: Peter Moresi
  * Date: 2/29/2016
  */
- 
-export function connectStoreMixin(store, getState) {
+
+export function connectStoreMixin(store, func) {
   return {
+    getInitialState() {
+
+      return func(
+        store.getState()
+      )
+
+    },
+
     componentDidMount() {
       this.__eventSubscription = store.addListener( this.__handleStoreChange )
     },
@@ -20,7 +28,7 @@ export function connectStoreMixin(store, getState) {
     __handleStoreChange() {
       if (store && typeof store.getState === 'function') {
         this.setState(
-          getState(
+          func(
             store.getState()
           )
         )
