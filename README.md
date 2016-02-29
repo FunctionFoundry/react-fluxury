@@ -114,6 +114,8 @@ MyComponent = connectStore(MyComponent, (state) => {
 
 Higher order functions are so cool and are compatible with ES6 classes.
 
+In this case state is passed down as props to the wrapped component.
+
 ```js
 var Component = require('react').Component;
 var {createStore, dispatch} = require('fluxury');
@@ -137,7 +139,7 @@ class MyComponent extends Component {
   render() {
     return (
       <div>
-        <p>{this.state.count}</p>
+        <p>{this.props.count}</p>
         <button onClick={this.handleUpClick}>+1</button>
         <button onClick={this.handleDownClick}>-1</button>
       </div>

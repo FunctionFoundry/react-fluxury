@@ -1,10 +1,11 @@
 {
   "name": "react-fluxury",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Connect fluxury stores to react components",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "make",
+    "test": "faucet `find test -name '*.js'`"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,11 @@
   "bugs": {
     "url": "https://github.com/FunctionFoundry/react-fluxury/issues"
   },
-  "homepage": "https://github.com/FunctionFoundry/react-fluxury#readme"
+  "homepage": "https://github.com/FunctionFoundry/react-fluxury#readme",
+  "dependencies": {
+    "react": "^0.14.7"
+  },
+  "devDependencies": {
+    "tape": "^4.4.0"
+  }
 }
