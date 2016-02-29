@@ -1,6 +1,6 @@
 # react-fluxury
 
-STATUS: Planned
+STATUS: Implemented but untested
 
 Connect your fluxury store's state to React.js component state.
 
