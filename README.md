@@ -112,10 +112,6 @@ var MyComponent = React.createClass({
   }
 
 });
-
-MyComponent = connectStore(MyComponent, (state) => {
-  count: state
-})
 ```
 
 ## higher-order component
@@ -156,7 +152,7 @@ class MyComponent extends Component {
 
 });
 
-MyComponent = connectStore(countStore, MyComponent, (state) => {
+EnhancedComponent = connectStore(countStore, MyComponent, (state) => {
   count: state
 })
 ```
