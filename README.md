@@ -21,7 +21,7 @@ Finally, the component needs to redraw itself when updates occurs. Fortunately,
 React.js makes this process less painful and automates away the complexity.
 
 However, when connecting Fluxury stores to components you add needless boilerplate
-code to your project.
+code to your project. No more!
 
 ## boilerplate
 
