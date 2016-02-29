@@ -4,6 +4,16 @@ STATUS: Implemented but untested
 
 Connect your fluxury store's state to React.js component state.
 
+## quick start
+
+```sh
+npm install --save react-fluxury
+```
+
+```js
+import {connectStore, connectStoreMixin} from 'react-fluxury'
+```
+
 ## chain reactions
 
 Flux and React.js thrive on chain reactions. An action results in
