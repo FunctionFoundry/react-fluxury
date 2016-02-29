@@ -1,8 +1,8 @@
-import { Component } from 'react';
+import React from 'react';
 
 export function connectStore (store, ComposedComponent, getState) {
   return (
-    class extends Component {
+    class extends React.Component {
 
       componentDidMount() {
         this.eventSubscription = store.addListener( this.handleStoreChange )
