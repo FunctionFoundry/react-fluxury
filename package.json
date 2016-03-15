@@ -1,6 +1,6 @@
 {
   "name": "react-fluxury",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Connect fluxury stores to React",
   "main": "lib/index.js",
   "scripts": {
@@ -31,7 +31,10 @@
   },
   "homepage": "https://github.com/FunctionFoundry/react-fluxury#readme",
   "dependencies": {
-    "react": "^0.14.7"
+    "react": "^0.14.7",
+    "redux": "^3.3.1",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.1.2",
@@ -40,7 +43,6 @@
     "babel-preset-react": "^6.5.0",
     "browserify": "^13.0.0",
     "immutable": "^3.7.5",
-    "redux": "^3.3.1",
     "tape": "^4.2.2",
     "uglifyify": "^3.0.1",
     "webpack": "^1.12.9"
