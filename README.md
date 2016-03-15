@@ -13,6 +13,22 @@ import {connect, connectStore, connectStoreMixin} from 'react-fluxury'
 ```
 ### connect
 
+Returns a function that generates a React component that runs your render function.
+
+connect(selector)(renderFunc)
+
+```js
+import {connect} from 'react-fluxury'
+
+function MyPage({number}) {
+  return <div>{number}</div>
+}
+
+export default connect(
+  state => { number: state.MyCounter}
+)(MyPage)
+```
+
 ## mixins
 
 Love or hate mixins, this is how to connect fluxury stores for mixin fanboys like myself.
