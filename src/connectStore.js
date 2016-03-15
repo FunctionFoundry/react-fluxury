@@ -31,7 +31,7 @@ export function connectStore (store, ComposedComponent, transform) {
       }
 
       render() {
-        return <ComposedComponent {...this.props} {...this.state} />;
+        return (<ComposedComponent {...this.props} {...this.state} />);
       }
     }
   )
