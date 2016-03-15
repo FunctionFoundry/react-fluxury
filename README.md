@@ -18,14 +18,24 @@ Returns a function that generates a React component that runs your render functi
 connect(selector)(renderFunc)
 
 ```js
+import {createStore} from 'fluxury'
 import {connect} from 'react-fluxury'
+
+var CounterStore = createStore(
+  'Counter Store',
+  0,
+  {
+    increment: (state) => state+1
+  }
+)
 
 function MyPage({number}) {
   return <div>{number}</div>
 }
 
 export default connect(
-  state => { number: state.MyCounter}
+  CounterStore,
+  state => { number: state }
 )(MyPage)
 ```
 

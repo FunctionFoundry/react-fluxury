@@ -1,7 +1,7 @@
 // Similar to connect in react-redux
 import { Component } from 'react'
 
-export function connect(selector) {
+export function connect(store, transform) {
   // return a new function that returns a new React class that calls the renderFunc
   return function(renderFunc) {
 
@@ -21,8 +21,14 @@ export function connect(selector) {
         this.token.remove()
       }
 
+      handleStoreChange() {
+        this.setState(
+          transform( store.getState() )
+        )
+      }
+
       render() {
-        return renderFunc(selector(this.state))
+        return renderFunc(transform(this.state))
       }
     }
   }
