@@ -11,7 +11,7 @@ npm install --save react-fluxury
 ```js
 import {connect, connectStore, connectStoreMixin} from 'react-fluxury'
 ```
-### connect
+## connect
 
 Returns a function that generates a React component that runs your render function.
 
