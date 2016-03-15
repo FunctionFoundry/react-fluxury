@@ -1,6 +1,6 @@
 {
   "name": "react-fluxury",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Connect fluxury stores to React",
   "main": "lib/index.js",
   "scripts": {
