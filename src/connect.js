@@ -28,7 +28,7 @@ export function connect(store, transform) {
       }
 
       render() {
-        return renderFunc(transform(this.state))
+        return renderFunc(this.state)
       }
     }
   }
