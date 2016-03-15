@@ -1,6 +1,6 @@
 # react-fluxury
 
-Connect your fluxury store's state to React.js component state.
+Connect a Fluxury store to React.js component state.
 
 ## quick start
 
