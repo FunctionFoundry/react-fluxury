@@ -15,7 +15,7 @@ import {connect, connectStore, connectStoreMixin} from 'react-fluxury'
 
 Returns a function that generates a React component that runs your render function.
 
-connect(store, selector)(renderFunc)
+connect(store, transform)(renderFunc)
 
 ```js
 import {createStore} from 'fluxury'
