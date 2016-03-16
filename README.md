@@ -21,13 +21,10 @@ connect(store, transform)(renderFunc)
 import {createStore} from 'fluxury'
 import {connect} from 'react-fluxury'
 
-var CounterStore = createStore(
-  'Counter Store',
-  0,
-  {
-    increment: (state) => state+1
-  }
-)
+var countStore = createStore('CountStore', 0, {
+  increment: (state) => state + 1,
+  decrement: (state) => state - 1
+});
 
 function MyPage({number}) {
   return <div>{number}</div>
@@ -91,11 +88,6 @@ var Component = require('react').Component;
 var {createStore, dispatch} = require('fluxury');
 var {connectStore} = require('react-fluxury');
 
-var countStore = createStore('CountStore', 0, {
-  increment: (state) => state + 1,
-  decrement: (state) => state - 1
-});
-
 class MyComponent extends Component {
 
   handleUpClick() {
@@ -130,11 +122,6 @@ This is how to connect fluxury stores without react-fluxury.
 ```js
 var React = require('react');
 var {createStore, dispatch} = require('fluxury');
-
-var countStore = createStore('CountStore', 0, {
-  increment: (state) => state + 1,
-  decrement: (state) => state - 1
-});
 
 var MyComponent = React.createClass({
 

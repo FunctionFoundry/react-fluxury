@@ -14,7 +14,7 @@ export function connectStoreMixin(store, func) {
     },
 
     componentDidMount() {
-      this.__eventSubscription = store.addListener( this.__handleStoreChange )
+      this.__eventSubscription = store.subscribe( this.__handleStoreChange )
     },
 
     componentWillUnmount() {

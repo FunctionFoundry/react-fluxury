@@ -14,7 +14,7 @@ export function connect(store, transform) {
       }
 
       componentDidMount() {
-        this.token = store.addListener( this.handleStoreChange )
+        this.token = store.subscribe( this.handleStoreChange )
       }
 
       componentWillUnmount() {

@@ -11,7 +11,7 @@ export function connectStore (store, ComposedComponent, transform) {
       }
 
       componentDidMount() {
-        this.eventSubscription = store.addListener( this.handleStoreChange )
+        this.eventSubscription = store.subscribe( this.handleStoreChange )
       }
 
       componentWillUnmount() {
