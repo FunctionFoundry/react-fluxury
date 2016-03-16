@@ -5,7 +5,7 @@ export function connect(store, transform) {
   // return a new function that returns a new React class that calls the renderFunc
   return function(renderFunc) {
 
-    return class extends Component {
+    return class Connect extends Component {
 
       constructor(props) {
         super(props)
