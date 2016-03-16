@@ -14,14 +14,12 @@ export function connectStoreMixin(store, func) {
     },
 
     componentDidMount() {
-      this.__eventSubscription = store.subscribe( this.__handleStoreChange )
+      this.unsubscribe = store.subscribe( this.__handleStoreChange )
     },
 
     componentWillUnmount() {
-      if (this.__eventSubscription && typeof this.__eventSubscription === 'function') {
-        this.__eventSubscription.remove()
-      } else {
-        console.log( '__eventSubscription is unexpected type.' )
+      if (typeof this.unsubscribe === 'function') {
+        this.unsubscribe()
       }
     },
 

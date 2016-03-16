@@ -1,6 +1,6 @@
 {
   "name": "react-fluxury",
-  "version": "0.2.0",
+  "version": "1.3.0",
   "description": "Connect fluxury stores to React",
   "main": "lib/index.js",
   "scripts": {
@@ -46,6 +46,6 @@
     "webpack": "^1.12.9"
   },
   "peerDependencies": {
-    "fluxury": "^1.2.0"
+    "fluxury": "^1.3.0"
   }
 }

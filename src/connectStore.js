@@ -11,14 +11,12 @@ export function connectStore (store, ComposedComponent, transform) {
       }
 
       componentDidMount() {
-        this.eventSubscription = store.subscribe( this.handleStoreChange )
+        this.unsubscribe = store.subscribe( this.handleStoreChange )
       }
 
       componentWillUnmount() {
-        if (this.eventSubscription && typeof this.eventSubscription === 'function') {
-          this.eventSubscription.remove()
-        } else {
-          console.log( 'eventSubscription is unexpected type.' )
+        if (typeof this.unsubscribe === 'function') {
+          this.unsubscribe()
         }
       }
 

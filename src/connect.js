@@ -14,11 +14,14 @@ export function connect(store, transform) {
       }
 
       componentDidMount() {
-        this.token = store.subscribe( this.handleStoreChange )
+        this.unsubscribe = store.subscribe( this.handleStoreChange )
       }
 
       componentWillUnmount() {
-        this.token.remove()
+        if (typeof this.unsubscribe === 'function') {
+          this.unsubscribe()
+          return
+        }
       }
 
       handleStoreChange() {
