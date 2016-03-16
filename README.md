@@ -126,7 +126,7 @@ var {createStore, dispatch} = require('fluxury');
 var MyComponent = React.createClass({
 
   componentDidMount: function() {
-    this.token = countStore.addListener( this.handleStoreChange );
+    this.token = countStore.subscribe( this.handleStoreChange );
   },
 
   componentWillUnmount: function() {
