@@ -126,11 +126,11 @@ var {createStore, dispatch} = require('fluxury');
 var MyComponent = React.createClass({
 
   componentDidMount: function() {
-    this.token = countStore.subscribe( this.handleStoreChange );
+    this.subscription = countStore.subscribe( this.handleStoreChange );
   },
 
   componentWillUnmount: function() {
-    this.token.remove();
+    this.subscription();
   },
 
   handleStoreChange: function() {
