@@ -38,6 +38,7 @@
     "babel-preset-react": "^6.11.1",
     "browserify": "^13.1.0",
     "fluxury": "^2.0.0",
+    "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "tape": "^4.2.2"
   },
