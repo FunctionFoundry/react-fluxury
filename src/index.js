@@ -1,3 +1,2 @@
-export {connect} from './connect'
+export {createClass} from './createClass'
 export {connectStore} from './connectStore'
-export {connectStoreMixin} from './connectStoreMixin'

@@ -1,30 +1,64 @@
 var test = require('tape');
-var rf = require('./lib/index')
+var {createClass, connectStore} = require('./lib/index')
+var {createStore} = require('fluxury')
+var React = require('react')
+var ReactDom = require('react-dom/server')
 
 test('api tests', function(t) {
-  t.plan(3);
+  t.plan(2);
 
-  t.equals(typeof rf, 'object' );
-  t.equals(typeof rf.connect, 'function' );
-  t.equals(typeof rf.connectStore, 'function' );
-  t.equals(typeof rf.connectStoreMixin, 'function' );
-
+  t.equals(typeof createClass, 'function' );
+  t.equals(typeof connectStore, 'function' );
 });
 
-test('connect works as expected', function(t) {
-  t.plan(1)
+var CounterStore = createStore({
+  getInitialState: () => ({ count: 0 }),
+  increment: (state) => ({ count: state.count + 1 }),
+});
 
-  t.ok(false) // figure out how to test this
+test('createClass works as expected', function(t) {
+  t.plan(2)
+
+  var CounterView = createClass(CounterStore)(({count}) => (
+    <div>{count}</div>
+  ))
+
+  var str = ReactDom.renderToStaticMarkup(<CounterView />)
+  t.equals(str, '<div>0</div>')
+
+  CounterView = createClass(CounterStore, s => ({ num: s.count }))(({num}) => (
+    <div>{num}</div>
+  ))
+
+  str = ReactDom.renderToStaticMarkup(<CounterView />)
+  t.equals(str, '<div>0</div>')
+
 })
 
 test('connectStore works as expected', function(t) {
-  t.plan(1)
+  t.plan(2)
 
-  t.ok(false) // figure out how to test this
-})
+  var CounterView = React.createClass({
+    render() {
+      return <div>{this.props.foo} - {this.props.count}</div>
+    }
+  })
 
-test('connectStoreMixin works as expected', function(t) {
-  t.plan(1)
+  var EnhancedCounterView = connectStore(CounterStore, CounterView)
 
-  t.ok(false) // figure out how to test this
+
+  var str = ReactDom.renderToStaticMarkup(<EnhancedCounterView foo="bar" />)
+  t.equals(str, '<div>bar - 0</div>')
+
+  CounterView = React.createClass({
+    render() {
+      return <div>{this.props.foo} - {this.props.num}</div>
+    }
+  })
+
+  EnhancedCounterView = connectStore(CounterStore, CounterView, d => ({ num: d.count }))
+
+  var str = ReactDom.renderToStaticMarkup(<EnhancedCounterView foo="bar" />)
+  t.equals(str, '<div>bar - 0</div>')
+
 })

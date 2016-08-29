@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function connectStore (store, ComposedComponent, transform) {
+export function connectStore (store, ComposedComponent, transform=d => d) {
   return (
     class ConnectToStore extends React.Component {
 
