@@ -1,6 +1,6 @@
 # react-fluxury
 
-[![Circle CI](https://circleci.com/gh/websitehq/react-fluxury/tree/master.svg?style=svg)](https://circleci.com/gh/websitehq/react-fluxury/tree/master)
+[![Circle CI](https://circleci.com/gh/WebsiteHQ/react-fluxury/tree/master.svg?style=svg)](https://circleci.com/gh/WebsiteHQ/react-fluxury/tree/master)
 
 Bind fluxury stores to React.js.
 
