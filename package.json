@@ -1,7 +1,7 @@
 {
-  "name": "react-fluxury",
-  "version": "2.0.0",
-  "description": "Connect fluxury stores to React",
+  "name": "react-pure-flux",
+  "version": "0.9.99",
+  "description": "Connect pure-flux stores to React",
   "main": "lib/index.js",
   "scripts": {
     "build": "make",
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WebsiteHQ/react-fluxury.git"
+    "url": "git+https://github.com/WebsiteHQ/react-pure-flux.git"
   },
   "keywords": [
     "react",
     "flux",
-    "fluxury",
+    "pure-flux",
     "react.js",
     "react",
     "component",
@@ -26,10 +26,13 @@
   "author": "Peter W Moresi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FunctionFoundry/react-fluxury/issues"
+    "url": "https://github.com/FunctionFoundry/react-pure-flux/issues"
   },
-  "homepage": "https://github.com/FunctionFoundry/react-fluxury#readme",
-  "dependencies": {},
+  "homepage": "https://github.com/FunctionFoundry/react-pure-flux#readme",
+  "dependencies": {
+    "pure-flux": "^0.9.99",
+    "react": "^15.3.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.14.0",
     "babel-core": "^6.14.0",
@@ -37,13 +40,11 @@
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "browserify": "^13.1.0",
-    "fluxury": "^2.0.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "tape": "^4.2.2"
   },
   "peerDependencies": {
-    "react": "^0.14.7",
-    "fluxury": "^2.0.0"
+    "pure-flux": "^0.9.99"
   }
 }

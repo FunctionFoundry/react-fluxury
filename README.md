@@ -1,50 +1,27 @@
-# react-fluxury
+# react-pure-flux
 
-[![Circle CI](https://circleci.com/gh/WebsiteHQ/react-fluxury/tree/master.svg?style=svg)](https://circleci.com/gh/WebsiteHQ/react-fluxury/tree/master)
+[![Circle CI](https://circleci.com/gh/websitehq/react-pure-flux/tree/master.svg?style=svg)](https://circleci.com/gh/websitehq/react-pure-flux/tree/master)
 
-Bind fluxury stores to React.js.
+Bind pure-flux stores to React.js.
 
 ## quick start
 
 ```sh
-npm install --save react-fluxury
+npm install --save react-pure-flux
 ```
 
 ```js
-import {createClass, connectStore} from 'react-fluxury'
-```
-## connect
-
-Returns a function that generates a React component that runs your render function.
-
-connect(store, transform)(renderFunc)
-
-```js
-import {createStore} from 'fluxury'
-import {createClass} from 'react-fluxury'
-
-var CounterStore = createStore({
-  getInitialState: () => ({ count: 0 }),
-  increment: (state) => ({ count: state.count + 1 }),
-});
-
-var CounterView = createClass(
-  CounterStore,
-)(({count}) => (
-  <div>{count}</div>
-))
+import {connectStore} from 'react-pure-flux'
 ```
 
-## higher-order component
+## connectStore
 
-Higher order functions are so cool and are compatible with ES6 classes.
-
-In this case state is passed down as props to the wrapped component.
+Wrap any component with a connect component.
 
 ```js
 var Component = require('react').Component;
-var {createStore, dispatch} = require('fluxury');
-var {connectStore} = require('react-fluxury');
+var {createStore, dispatch} = require('pure-flux');
+var {connectStore} = require('react-pure-flux');
 
 class MyComponent extends Component {
 
