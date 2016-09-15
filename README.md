@@ -1,6 +1,6 @@
 # react-pure-flux
 
-[![Circle CI](https://circleci.com/gh/websitehq/react-pure-flux/tree/master.svg?style=svg)](https://circleci.com/gh/websitehq/react-pure-flux/tree/master)
+[![CircleCI](https://circleci.com/gh/WebsiteHQ/react-pure-flux.svg?style=svg)](https://circleci.com/gh/WebsiteHQ/react-pure-flux)
 
 Bind pure-flux stores to React.js.
 
