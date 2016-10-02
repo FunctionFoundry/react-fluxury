@@ -45,6 +45,6 @@
     "tape": "^4.2.2"
   },
   "peerDependencies": {
-    "pure-flux": "^0.11.0",
+    "pure-flux": "^0.11.0"
   }
 }
