@@ -1,6 +1,6 @@
 {
   "name": "react-pure-flux",
-  "version": "0.10.99",
+  "version": "0.11.0",
   "description": "Connect pure-flux stores to React",
   "main": "lib/index.js",
   "scripts": {
@@ -30,7 +30,6 @@
   },
   "homepage": "https://github.com/FunctionFoundry/react-pure-flux#readme",
   "dependencies": {
-    "pure-flux": "^0.9.99",
     "react": "^15.3.1",
     "react-addons-shallow-compare": "^15.3.1"
   },
@@ -46,6 +45,6 @@
     "tape": "^4.2.2"
   },
   "peerDependencies": {
-    "pure-flux": "^0.9.99"
+    "pure-flux": "^0.11.0",
   }
 }
