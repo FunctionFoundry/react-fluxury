@@ -2,19 +2,15 @@
 
 [![CircleCI](https://circleci.com/gh/WebsiteHQ/react-pure-flux.svg?style=svg)](https://circleci.com/gh/WebsiteHQ/react-pure-flux)
 
-Bind pure-flux stores to React.js.
+Bind [pure-flux](https://github.com/WebsiteHQ/pure-flux) stores to [React.js](https://facebook.github.io/react/).
 
-## quick start
+## Install
 
 ```sh
-npm install --save react-pure-flux
+npm install --save react-pure-flux pure-flux
 ```
 
-```js
-import {connectStore} from 'react-pure-flux'
-```
-
-## connectStore
+## Example
 
 Wrap any component with a connect component.
 
@@ -22,6 +18,15 @@ Wrap any component with a connect component.
 var Component = require('react').Component;
 var {createStore, dispatch} = require('pure-flux');
 var {connectStore} = require('react-pure-flux');
+
+var countStore = createStore("CounterStore", (state={ count: 0 }, action) => {
+  switch (action.type) {
+    case 'increment':
+    return { count: state.count+1 };
+    default:
+    return state;
+  }
+});
 
 class MyComponent extends Component {
 

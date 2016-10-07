@@ -1,6 +1,6 @@
 var test = require('tape');
 var {createClass, connectStore} = require('./lib/index')
-var {createStore} = require('pure-flux')
+var {createStore, dispatch} = require('pure-flux')
 var React = require('react')
 var ReactDom = require('react-dom/server')
 
@@ -10,14 +10,17 @@ test('api tests', function(t) {
   t.equals(typeof connectStore, 'function' );
 });
 
-var CounterStore = createStore({
-  getInitialState: () => ({ count: 0 }),
-  increment: (state) => ({ count: state.count + 1 }),
+var CounterStore = createStore("CounterStore", (state={ count: 0 }, action) => {
+  switch (action.type) {
+    case 'increment':
+    return { count: state.count+1 };
+    default:
+    return state;
+  }
 });
 
-
 test('connectStore works as expected', function(t) {
-  t.plan(2)
+  t.plan(3)
 
   var CounterView = React.createClass({
     render() {
@@ -41,5 +44,10 @@ test('connectStore works as expected', function(t) {
 
   var str = ReactDom.renderToStaticMarkup(<EnhancedCounterView foo="bar" />)
   t.equals(str, '<div>bar - 0</div>')
+
+  dispatch('increment')
+
+  var str = ReactDom.renderToStaticMarkup(<EnhancedCounterView foo="bar" />)
+  t.equals(str, '<div>bar - 1</div>')
 
 })

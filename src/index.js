@@ -1,5 +1,5 @@
 import React from 'react';
-import shallowCompare from 'react-addons-shallow-compare';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 export function connectStore (store, Composed, transform=d=>d) {
   return (
@@ -8,13 +8,7 @@ export function connectStore (store, Composed, transform=d=>d) {
       constructor(props) {
         super(props)
         this.state = transform( store.getState() ) || {}
-        this.handleChange = this.handleChange.bind(this)
-      }
-
-      // Speed up render on pure stores
-      // https://facebook.github.io/react/docs/shallow-compare.html
-      shouldComponentUpdate(nextProps, nextState) {
-        return shallowCompare(this, nextProps, nextState);
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
       }
 
       componentDidMount() {
@@ -36,7 +30,7 @@ export function connectStore (store, Composed, transform=d=>d) {
       }
 
       render() {
-        return (<Composed {...this.props} {...this.state} />);
+        return (<Composed {...this.state} {...this.props} />);
       }
     }
   )
