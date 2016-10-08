@@ -1,6 +1,6 @@
 {
   "name": "react-pure-flux",
-  "version": "0.12.0",
+  "version": "1.0.0",
   "description": "Connect pure-flux stores to React",
   "main": "lib/index.js",
   "scripts": {
@@ -47,6 +47,6 @@
     "tape": "^4.2.2"
   },
   "peerDependencies": {
-    "pure-flux": "^0.12.1"
+    "pure-flux": "^1.0.0"
   }
 }

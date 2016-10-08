@@ -2,7 +2,9 @@
 
 [![CircleCI](https://circleci.com/gh/WebsiteHQ/react-pure-flux.svg?style=svg)](https://circleci.com/gh/WebsiteHQ/react-pure-flux)
 
-Bind [pure-flux](https://github.com/WebsiteHQ/pure-flux) stores to [React.js](https://facebook.github.io/react/).
+Connect a [pure-flux](https://github.com/WebsiteHQ/pure-flux) store to [React.js](https://facebook.github.io/react/).
+
+It enables the [PureRenderMixin](https://facebook.github.io/react/docs/pure-render-mixin.html) to improve performance.
 
 ## Install
 
@@ -11,8 +13,6 @@ npm install --save react-pure-flux pure-flux
 ```
 
 ## Example
-
-Wrap any component with a connect component.
 
 ```js
 var Component = require('react').Component;
