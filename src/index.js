@@ -9,6 +9,7 @@ export function connectStore (store, Composed, transform=d=>d) {
         super(props)
         this.state = transform( store.getState() ) || {}
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
+        this.handleChange = this.handleChange.bind(this)
       }
 
       componentDidMount() {

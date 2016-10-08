@@ -1,6 +1,6 @@
 {
   "name": "react-pure-flux",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Connect pure-flux stores to React",
   "main": "lib/index.js",
   "scripts": {
