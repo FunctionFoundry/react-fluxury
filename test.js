@@ -1,5 +1,5 @@
 var test = require('tape');
-var {createClass, connectStore} = require('./lib/index')
+var {createClass, connectStore} = require('./src/index')
 var {createStore, dispatch} = require('pure-flux')
 var React = require('react')
 var ReactDom = require('react-dom/server')

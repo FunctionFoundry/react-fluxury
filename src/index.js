@@ -22,12 +22,10 @@ export function connectStore (store, Composed, transform=d=>d) {
         }
       }
 
-      handleChange() {
-        if (store && typeof store.getState === 'function') {
-          this.setState(
-            transform( store.getState() )
-          )
-        }
+      handleChange(state) {
+        this.setState(
+          transform( state )
+        )
       }
 
       render() {
