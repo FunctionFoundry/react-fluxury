@@ -1,6 +1,6 @@
 {
   "name": "react-pure-flux",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Connect pure-flux stores to React",
   "main": "lib/index.js",
   "scripts": {
@@ -26,9 +26,9 @@
   "author": "Peter W Moresi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FunctionFoundry/react-pure-flux/issues"
+    "url": "https://github.com/WebsiteHQ/react-pure-flux/issues"
   },
-  "homepage": "https://github.com/FunctionFoundry/react-pure-flux#readme",
+  "homepage": "https://github.com/WebsiteHQ/react-pure-flux#readme",
   "dependencies": {
     "react": "^15.3.1",
     "react-addons-pure-render-mixin": "^15.3.2"
