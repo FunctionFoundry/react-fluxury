@@ -1,8 +1,8 @@
 # react-pure-flux
 
-[![CircleCI](https://circleci.com/gh/WebsiteHQ/react-pure-flux.svg?style=svg)](https://circleci.com/gh/WebsiteHQ/react-pure-flux)
+[![CircleCI](https://circleci.com/gh/PureFlux/react-pure-flux.svg?style=svg)](https://circleci.com/gh/WebsiteHQ/react-pure-flux)
 
-Connect a [pure-flux](https://github.com/WebsiteHQ/pure-flux) store to [React.js](https://facebook.github.io/react/).
+Connect a [pure-flux](https://github.com/PureFlux/pure-flux) store to [React.js](https://facebook.github.io/react/).
 
 It enables the [PureRenderMixin](https://facebook.github.io/react/docs/pure-render-mixin.html) to improve performance.
 
